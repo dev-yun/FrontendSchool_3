@@ -29,9 +29,12 @@ body {
   height: 625px;
 }
 
+.component__img {
+  text-align: center;
+}
+
 .component__img img {
-  display: block;
-  margin: auto;
+  vertical-align: bottom;
 }
 
 .component__contents {
