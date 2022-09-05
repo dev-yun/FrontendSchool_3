@@ -1,0 +1,50 @@
+body,
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+/* header */
+/* header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navigation a {
+  padding: 0px 10px;
+} */
+
+/* main */
+
+/* .banner {
+  background-color: #ffcf5c;
+  width: 1920px;
+  height: 800px;
+}
+
+.banner__img {
+  background-image: url("./images/lion.png");
+}
+
+.banner__contents {
+  position: absolute;
+  width: 159px;
+  height: 24px;
+  left: 906px;
+  top: 265px;
+
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.banner__ad{
+
+} */
