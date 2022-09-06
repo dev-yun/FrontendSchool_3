@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 세개의 차이 -->
+    <!-- 스크린 리더가 이미지를 읽는다. -->
+    <img src="test.jpg" alt="이미지" />
+    <!-- 스크린 리더가 읽지 않음 (읽지 않게 하려고 사용함) -->
+    <img src="test.jpg" alt="" />
+    <!-- 스크린 리더가 test를 읽는다. (test이미지입니다..) -->
+    <img src="test.jpg" />
+
+    <!-- 상대경로 : 현재 폴더에 jeju.jpg -->
+    <img src="./jeju.jpg" alt="이미지" />
+    <!-- 상대경로 : 상위 폴더 > img폴더 > jeju.jpg -->
+    <img src="../img/jeju.jpg" alt="이미지" />
+    <!-- 절대경로 -->
+    <img src="http://www.paullab.co.kr/images/ceo.png" alt="이미지" />
+    <img
+      src="/Users/dev-yun/Documents/project-lion-html-css/HTML/images/lycat.png"
+      alt="이미지"
+    />
+  </body>
+</html>
