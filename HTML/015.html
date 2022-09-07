@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 잘못된 예제 : name이 서로 달라서 서로 다른 radio로 인식함(중복클릭) -->
+    <h1>회원가입</h1>
+    <form action="015.html" method="get">
+      <label for="man">남</label>
+      <input type="radio" name="남" value="man" id="man" />
+      <label for="man">여</label>
+      <input type="radio" name="여" value="woman" id="woman" />
+      <button type="submit">성별 선택</button>
+    </form>
+
+    <!-- name을 통일하여 수정 -->
+    <form action="015.html" method="get">
+      <label for="man">남</label>
+      <input type="radio" name="성별" value="man" id="man" />
+      <label for="man">여</label>
+      <input type="radio" name="성별" value="woman" id="woman" />
+      <button type="submit">성별 선택</button>
+    </form>
+  </body>
+</html>

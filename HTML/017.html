@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 브라우저에서 어떻게 표현되는지 확인 -->
+    <form action="017.html">
+      <fieldset>
+        <legend>개인정보</legend>
+        <label for="myName">이름</label>
+        <input type="text" name="name" id="myName" />
+        <label for="myTel">전화번호</label>
+        <input type="tel" name="tel" id="myTel" />
+        <label for="myEmail">이메일</label>
+        <input type="mail" name="mail" id="myEmail" />
+      </fieldset>
+    </form>
+
+    <!-- 로그인창의 filedset, legend 예제 -->
+    <div>
+      <h3>회원 로그인</h3>
+      <form action="" method="POST">
+        <fieldset>
+          <legend>로그인 정보</legend>
+          <ul class="formList">
+            <li>
+              <label for="login_id">아이디</label>
+              <input
+                type="text"
+                required
+                placeholder="아이디 입력"
+                id="login_id"
+              />
+            </li>
+            <li>
+              <label for="login_pw">비밀번호</label>
+              <input
+                type="password"
+                required
+                placeholder="비밀번호 입력"
+                id="login_pw"
+              />
+            </li>
+          </ul>
+
+          <div>
+            <button type="submit" class="btn large">로그인 하기</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
