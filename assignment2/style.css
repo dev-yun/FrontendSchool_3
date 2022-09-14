@@ -1,0 +1,108 @@
+/* reset css */
+body,
+h1 {
+  margin: 0;
+}
+
+h1 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+figure {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+button {
+  background: inherit;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  cursor: pointer;
+}
+
+/* common */
+body {
+  background-color: #e5e5e5;
+}
+
+.base-font {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+/* button 구현 */
+.wrapper {
+  width: 400px;
+  height: 200px;
+  background-color: #ffffff;
+
+  margin: 400px auto;
+  overflow: hidden;
+}
+
+.login-area {
+  width: 350px;
+  height: 140px;
+  background-color: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+
+  margin: 30px 25px;
+}
+
+.login-title {
+  margin-top: 19px;
+  margin-left: 16px;
+  margin-bottom: 16px;
+}
+
+.login-button {
+  width: 318px;
+  height: 40px;
+  background: #711bff;
+  color: #ffffff;
+  border-radius: 4px;
+
+  margin: 0px 16px;
+}
+
+.weniv-logo {
+  width: 64px;
+  height: 18px;
+  vertical-align: bottom;
+  margin-right: 4px;
+}
+
+.login-sub_area {
+  overflow: hidden;
+  margin: 18px 16px;
+  color: #767676;
+}
+
+.login-find_info {
+  float: left;
+}
+
+.login-signup {
+  float: right;
+}
+
+figure > img {
+  width: 16px;
+  height: 16px;
+
+  vertical-align: middle;
+}
+
+figure > figcaption {
+  display: inline-block;
+}
