@@ -4,9 +4,62 @@
 	font-weight: 500;
 	font-weight: 700;
 	*/
+
+  background-color: rebeccapurple;
 }
 
-.container {
+/* common */
+.wrapper {
   width: 1080px;
   height: 780px;
+
+  margin: auto;
+}
+
+base-font {
+  font-weight: 500;
+}
+
+base-font_bold {
+  font-weight: 700;
+}
+
+/* header */
+
+.portfolio-header {
+  padding: 100px 0px;
+  display: flex;
+  align-items: center;
+}
+
+.under-bar {
+  width: 83px;
+  height: 2px;
+  background-color: white;
+}
+
+/* container */
+.container-section {
+  width: 1080px;
+  height: 165px;
+
+  display: flex;
+}
+
+.img-box {
+  width: 280px;
+  height: 165px;
+  background-size: cover;
+}
+
+.rest-img {
+  background-image: url("/zigzag/images/photo01.png");
+}
+
+.craft-img {
+  background-image: url("/zigzag/images/photo02.png");
+}
+
+.scrap-img {
+  background-image: url("/zigzag/images/photo03.png");
 }
