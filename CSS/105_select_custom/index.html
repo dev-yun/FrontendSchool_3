@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/CSS/105_select_custom/normalize.css" />
+    <style>
+      .custom-select {
+        margin: 50px 0px 0px 50px;
+        width: 200px;
+
+        position: relative;
+      }
+
+      .btn-select {
+        width: 100%;
+        padding: 11px 20px 11px 13px;
+
+        border-radius: 10px;
+        border: 1px solid #c4c4c4;
+        box-sizing: border-box;
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: left;
+
+        cursor: pointer;
+        background: url(/CSS/105_select_custom/images/icon-Triangle-down.png)
+          right 12px center no-repeat;
+        background-size: 12px 12px;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      .btn-select:focus {
+        border: 1px solid #9b51e0;
+        outline: 3px solid #f8e4ff;
+      }
+
+      .btn-select.on {
+        background: url(/CSS/105_select_custom/images/icon-Triangle-up.png)
+          right 12px center no-repeat;
+        background-size: 12px 12px;
+      }
+
+      /* list-member(ul)은 기본적으로 display:none이다. (숨기기 위해서)
+         하지만 btn-select(버튼)이 클릭되어 on이 되면, display:block으로 변환하여
+         화면에 나타나도록 만든다. (css로 조건문과 유사한 코드를 작성한 방법)
+      */
+      .btn-select.on + .list-member {
+        display: block;
+      }
+
+      /* position을 absolute로 주면 부모 relative에 종속되어 다른 요소에 영향을 주지 않지만
+         relative로 주면 자신의 공간을 갖고 있기 때문에 만약 아래에 다른 요소가 있다면 밀어내는 영향을 준다.
+      */
+      .list-member {
+        display: none;
+        position: absolute;
+        top: 49px;
+        left: 0px;
+
+        width: 100%;
+
+        border: 1px solid #c4c4c4;
+        border-radius: 10px;
+        box-sizing: border-box;
+        box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+      }
+
+      .list-member > li {
+        padding: 5px 7px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .list-member > li:first-of-type {
+        margin-top: 4px;
+      }
+
+      .list-member > li:last-of-type {
+        margin-bottom: 4px;
+      }
+
+      .list-member > li > button {
+        border: none;
+
+        width: 100%;
+        padding: 7px 10px;
+
+        border-radius: 8px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+
+        cursor: pointer;
+
+        text-align: left;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      .list-member > li > button:hover,
+      .list-member > li > button:focus {
+        background: #f8e4ff;
+      }
+    </style>
+    <title>select</title>
+  </head>
+  <body>
+    <h2>셀렉트 박스 만들기</h2>
+    <article class="custom-select">
+      <button class="btn-select">최애 프로그래밍 언어</button>
+      <ul class="list-member">
+        <li><button type="button">Python</button></li>
+        <li><button type="button">JavaScript</button></li>
+        <li><button type="button">Java</button></li>
+        <li><button type="button">C++</button></li>
+        <li><button type="button">TypeScript</button></li>
+      </ul>
+    </article>
+
+    <script>
+      const btn = document.querySelector(".btn-select");
+      const list = document.querySelector(".list-member");
+      btn.addEventListener("click", () => {
+        btn.classList.toggle("on");
+      });
+      list.addEventListener("click", (event) => {
+        if (event.target.nodeName === "BUTTON") {
+          btn.textContent = event.target.textContent;
+          btn.classList.remove("on");
+        }
+      });
+    </script>
+  </body>
+</html>
