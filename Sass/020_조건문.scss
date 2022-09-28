@@ -1,0 +1,42 @@
+@mixin avatar($size, $circle: false) {
+  width: $size;
+  height: $size;
+  background-color: red;
+
+  @if $circle {
+    border-radius: $size /
+      2; // step 1 (px값을 인자로 안주면 단위가 나타나지 않음(.two)
+    // border-radius: ($size / 2) + px; // step 2 단위를 추가
+
+    // 시스템 권고사항
+    // @use "sass:math";
+    // math.div($size, 2) or calc($size / 2)
+    // border-radius: math.div($size, 2);
+  } @else {
+    border-radius: 3px;
+  }
+}
+
+.one {
+  @include avatar(10px, true);
+}
+
+.two {
+  @include avatar(10, true);
+}
+
+.three {
+  @include avatar(10px, false);
+}
+
+.four {
+  @include avatar(10px);
+}
+
+.five {
+  @include avatar(10px, 10 > 100);
+}
+
+// .six {
+//   @include avatar(10px, $one > $two);
+// }

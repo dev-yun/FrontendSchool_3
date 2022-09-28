@@ -1,0 +1,8 @@
+@charset "UTF-8";
+/* @content를 사용하면 원하는 부분에 스타일을 추가하여 전달할 수 있다. */
+a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}/*# sourceMappingURL=016_content.css.map */

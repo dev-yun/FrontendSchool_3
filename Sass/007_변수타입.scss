@@ -1,0 +1,58 @@
+/*
+변수 타입 종류
+- numbers : 1, .82, 20px, 2em 등 ( px, em, rem도 number 취급 )
+- strings : "./images/a.png", bold, left, uppercase 등
+- colors : green, #FFF, rgba(255,0,0,.5) 등
+- booleans : true, false
+- null => 에러가 발생하면 컴파일이 되지 않아서 오류가 날만한 부분을 null로 방어코드 작업
+- list => $font-size : 10px 12px 16px;
+- map => $font-weights: ("regular": 400, "medium": 500, "bold": 700);
+*/
+
+// number
+$하나: 1px;
+$둘: 2rem;
+
+// string
+$path: "./assets/img/";
+$file: "background.png";
+.test {
+  background-image: url($path + $file);
+}
+
+// color
+$cool-red: #e12c4a;
+
+// booleans (참, 거짓) - 논리형
+$true: true;
+
+// null
+$null: null;
+
+// list (1번째부터 시작)
+$font-size: 10px 12px 16px;
+// $image-file : photo_01, photo_02, photo_03;
+
+.test2 {
+  font-size: nth($list: $font-size, $n: 2);
+}
+
+.test3 {
+  // 2번째 요소 사용
+  font-size: nth($font-size, 2);
+}
+
+// map
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 700,
+);
+
+.test4 {
+  font-weight: map-get($font-weights, "medium"); // 500
+  font-weight: map-get(
+    $font-weights,
+    "extra-bold"
+  ); // null(컴파일시 반환하지 않음)
+}

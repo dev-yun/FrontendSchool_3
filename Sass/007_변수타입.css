@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/*
+변수 타입 종류
+- numbers : 1, .82, 20px, 2em 등 ( px, em, rem도 number 취급 )
+- strings : "./images/a.png", bold, left, uppercase 등
+- colors : green, #FFF, rgba(255,0,0,.5) 등
+- booleans : true, false
+- null => 에러가 발생하면 컴파일이 되지 않아서 오류가 날만한 부분을 null로 방어코드 작업
+- list => $font-size : 10px 12px 16px;
+- map => $font-weights: ("regular": 400, "medium": 500, "bold": 700);
+*/
+.test {
+  background-image: url("./assets/img/background.png");
+}
+
+.test2 {
+  font-size: 12px;
+}
+
+.test3 {
+  font-size: 12px;
+}
+
+.test4 {
+  font-weight: 500;
+}/*# sourceMappingURL=007_변수타입.css.map */

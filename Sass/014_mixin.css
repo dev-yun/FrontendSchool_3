@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/* 
+mixin에는 매개변수(parameter)를 추가할 수 있음 
+사용할때는 인자(argument)로 사용함
+함수와 유사
+*/
+.profile {
+  background-image: url("./assets/user.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.profile-1 {
+  background-image: url("./assets/user.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 30% 50%;
+}
+
+.profile-2 {
+  background-image: url("./assets/user.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 30% 30%;
+}/*# sourceMappingURL=014_mixin.css.map */

@@ -1,0 +1,26 @@
+/* 하나의 클래스를 가져와 추가하는 extend보다 공통의 스타일을 갖는 
+placeholder를 만들어서 각각의 클래스에 넣어준다.
+mixin과 같은 기능 */
+
+%base-button {
+  width: 133px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.follow-button {
+  @extend %base-button;
+  background-color: #ffffff;
+  color: #ff375f;
+  border: 3px solid #ff375f;
+}
+
+.message-button {
+  @extend %base-button;
+  background-color: #ff375f;
+  color: white;
+}

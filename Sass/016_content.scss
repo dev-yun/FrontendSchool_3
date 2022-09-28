@@ -1,0 +1,17 @@
+/* @content를 사용하면 원하는 부분에 스타일을 추가하여 전달할 수 있다. */
+
+// 정의하는 곳에서
+@mixin sample {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @content;
+}
+
+// 사용하는 곳에서 (추가로 스타일링을 할 수 있음)
+a {
+  @include sample {
+    // sample mixin을 가져와 color 속성을 추가
+    color: white;
+  }
+}

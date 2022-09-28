@@ -1,0 +1,33 @@
+.test {
+  width: calc(100% - 80px);
+}
+
+.one {
+  /* 15px - 10px */
+  font-size: 5px;
+}
+
+.three {
+  /* 1in - 15px */
+  font-size: 0.84375in;
+}
+
+.four {
+  /* 15px - 1cm */
+  font-size: -22.7952755906px;
+}
+
+.five {
+  /* 1cm - 15px */
+  font-size: 0.603125cm;
+}
+
+.six {
+  /* 1 - 15px */
+  font-size: -14px;
+}
+
+.seven {
+  /* 15px - 10 */
+  font-size: 5px;
+}/*# sourceMappingURL=010_변수_산술연산자.css.map */

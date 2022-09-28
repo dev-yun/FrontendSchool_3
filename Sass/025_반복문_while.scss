@@ -1,0 +1,9 @@
+$i: 10;
+@while $i > 1 {
+  $i: $i - 2;
+  .content-#{$i} {
+    width: 100px;
+    height: 100px;
+    background-color: tomato;
+  }
+}

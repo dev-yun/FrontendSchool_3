@@ -1,0 +1,46 @@
+// 기본 산술 연산자와 같다. ( +, -, *, /, % )
+// 같은 단위를 연산하지 않으면 에러가 발생한다.
+
+@debug 10s + 15s; // 25s
+@debug 1in - 10px; // 0.8958333333in
+@debug 5px * 3px; // 15px*px (에러)
+@debug 1in % 9px; // 0.0625in (1in == 96px)
+
+.test {
+  width: calc(100% - 80px);
+}
+
+.one {
+  /* 15px - 10px */
+  font-size: 15px - 10px;
+}
+
+// error
+// .two {
+//     font-size: 15px - 1em;
+// }
+
+.three {
+  /* 1in - 15px */
+  font-size: 1in - 15px;
+}
+
+.four {
+  /* 15px - 1cm */
+  font-size: 15px - 1cm;
+}
+
+.five {
+  /* 1cm - 15px */
+  font-size: 1cm - 15px;
+}
+
+.six {
+  /* 1 - 15px */
+  font-size: 1 - 15px;
+}
+
+.seven {
+  /* 15px - 10 */
+  font-size: 15px - 10;
+}

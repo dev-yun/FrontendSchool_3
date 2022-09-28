@@ -1,0 +1,27 @@
+/* 
+mixin에는 매개변수(parameter)를 추가할 수 있음 
+사용할때는 인자(argument)로 사용함
+함수와 유사
+*/
+
+// parameter를 선언할때 기본값을 줄 수 있다.
+@mixin image-style($url, $size, $repeat, $positionX: 50%, $positionY: 50%) {
+  background-image: url($url);
+  background-size: $size;
+  background-repeat: $repeat;
+  background-position: $positionX $positionY;
+}
+
+//background관련 스타일 코드가 들어있다.
+//mixin의 인수에 따라 조금씩 다른 스타일링이 가능하다.
+.profile {
+  @include image-style("./assets/user.jpg", cover, no-repeat);
+}
+
+.profile-1 {
+  @include image-style("./assets/user.jpg", cover, no-repeat, 30%);
+}
+
+.profile-2 {
+  @include image-style("./assets/user.jpg", cover, no-repeat, 30%, 30%);
+}
