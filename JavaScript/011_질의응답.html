@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <p>최연소 나이 : <strong class="young"></strong></p>
+    <p>최고령 나이 : <strong class="old"></strong></p>
+    <script>
+      const users = [
+        {
+          _id: "63368bfa931093cd53cd99ad",
+          index: 0,
+          guid: "76a77f87-3355-4372-b37f-b7212aed8573",
+          age: 27,
+          name: "Caroline Sears",
+          gender: "female",
+        },
+        {
+          _id: "63368bfaf9d37671b7e47710",
+          index: 1,
+          guid: "97ab6684-ae7b-4681-93d2-ece231e36b05",
+          age: 35,
+          name: "Wolfe Blanchard",
+          gender: "male",
+        },
+        {
+          _id: "63368bfa7e76e0aa3b0e46f6",
+          index: 2,
+          guid: "07ecc370-5875-4cd8-b2e3-1ef4f6a57d22",
+          age: 37,
+          name: "Lola Obrien",
+          gender: "female",
+        },
+        {
+          _id: "63368bfab16a67cc36ac4560",
+          index: 3,
+          guid: "8f6af920-273d-40d3-a9c5-cd5e932b8bae",
+          age: 21,
+          name: "Rhea Reese",
+          gender: "female",
+        },
+        {
+          _id: "63368bfaa1b8e1486242d732",
+          index: 4,
+          guid: "31ad1d60-bb31-4f55-9d42-8c3b90cf4d1d",
+          age: 33,
+          name: "Cook Parker",
+          gender: "male",
+        },
+        {
+          _id: "63368bfac8da3d2682dd4e44",
+          index: 5,
+          guid: "7c91ecda-96fd-437e-9d06-1a4e4be89638",
+          age: 28,
+          name: "Kerr Weaver",
+          gender: "male",
+        },
+        {
+          _id: "63368bfa3f8342d4a16d10b2",
+          index: 6,
+          guid: "545ba48e-6958-42dc-859a-b19ba65702a1",
+          age: 39,
+          name: "Morris Hammond",
+          gender: "male",
+        },
+      ];
+      const ages = users.map((user) => user.age);
+
+      document.querySelector(".young").innerText = Math.min(...ages);
+      document.querySelector(".old").innerText = Math.max(...ages);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document</title>
+  </head>
+  <body>
+    <script>
+      // String(문자열)
+      let text = "ABCDEFGHIJK";
+      let text2 = "mom said 'hello world!'";
+      let text3 = 'mom said "hello world!"';
+      let text4 = 'mom said "hello world!"';
+      let text5 = "a\nb\ncde";
+      let text6 = "a\tbcde";
+      let text7 = "10abc";
+
+      console.log(text + text);
+      console.log(text[4] + text[5] + text[6]);
+      console.log(text.slice(4, 7));
+      console.log(text2);
+      console.log(text3);
+      console.log(text4);
+      console.log(text5);
+      console.log(text6);
+      console.log(text7 + text7);
+      console.log(parseInt(text7) + parseInt(text7)); // 숫자 + 문자일때 숫자만 빼서 Number타입으로 변환 (앞에 숫자가 없다면 NaN)
+      console.log(Number(text7) + Number(text7)); // 숫자가 아닌 것은 NaN로 변환
+      console.log(1000000 * NaN);
+      console.log("1000000" + NaN);
+
+      if (" ") {
+        console.log("Hello World! - 1");
+      }
+
+      if ("") {
+        console.log("Hello World! - 2");
+      }
+    </script>
+  </body>
+</html>

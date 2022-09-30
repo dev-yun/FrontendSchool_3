@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      let n1 = 10000;
+      let n2 = 10.123123;
+      let n3 = 31;
+      let n4 = 1001;
+      let n5 = 1111;
+
+      let s1 = "1000000000";
+      let s2 = "1,000,000,000";
+      console.log(parseInt(n1));
+      console.log(parseInt(n2));
+      console.log(parseInt(n3, 2));
+      console.log(parseInt(n4, 2));
+      console.log(parseInt(n5, 2));
+      console.log(n2.toFixed(3));
+
+      console.log("-------");
+      console.log(Number(true));
+      console.log(Number(false));
+      console.log(Number(""));
+      console.log(Number(" ")); // 주의!
+
+      console.log("-------");
+      console.log(Number("hello"));
+      console.log(Number("10 20"));
+      console.log(Number("10     "));
+      console.log(Number("     10"));
+      console.log(Number("     10     "));
+
+      // Number 메서드
+      console.log("-------");
+      console.log(Math.PI);
+      console.log(Math.max(10, 20, 3, 40, 50));
+      console.log(Math.min(10, 20, 3, 40, 50));
+
+      let data = [10, 20, 30, 40];
+      // console.log(Math.max(data)); 에러
+      console.log(Math.max(...data));
+      console.log(Math.min(...data));
+
+      console.log(Math.round(4.7)); // 반올림
+      console.log(Math.round(4.2));
+
+      console.log(Math.random()); // 0~0.9999
+      console.log(Math.floor(Math.random() * 45 + 1)); // 로또 번호
+
+      console.log(Math.sqrt(64));
+      console.log(Math.pow(2, 3));
+      console.log(Math.pow(3, 5));
+
+      // 컴퓨터의 10진수 연산은 정확하지 않다.
+      // 부동 소수점 이슈
+      // 0.1 + 0.2 = 0.3000000000000004
+      // 0.3 + 0.6 = 0.8999999999999999
+      // toFixed나 round 메서드를 활용하여 수정해야함
+
+      // 숫자가 일점 범위를 넘는 큰 수라면 BigInt를 사용해야한다.
+      console.log(10000000000000000000 + 2); // 10000000000000000000
+      console.log(BigInt(10000000000000000000) + BigInt(2)); // 작은 수에도 BigInt를 지정해줘야함
+      console.log(10000000000000000002n + 2n); //n으로 사용할수도 있음
+
+      // js가 안전하게 저장할 수 있는 최대 숫자 (Number.MAX_SAFE_INTEGER)
+      console.log(Number.MAX_SAFE_INTEGER);
+
+      /*
+        1bit = 0과 1을 표현할 수 있는 최소 단위
+        8bit = 1byte
+        00000000 ~ 11111111 (0 ~ 255)
+            ex) 0.0.0.0 ~ 255.255.255.255
+        1024byte = 1KB
+        1024KB = 1MB
+        1024MB = 1GB
+        1024GB = 1TB
+        (KB,MB,GB,TB,PB)갈매기털빼
+      */
+    </script>
+  </body>
+</html>

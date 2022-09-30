@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document</title>
+  </head>
+  <body>
+    <script>
+      console.log("hello");
+
+      let d = {
+        one: 1,
+        two: 2,
+        three: 3,
+      };
+      console.dir(d);
+
+      console.info("console.info");
+
+      console.group("상위");
+      console.log("팀장1");
+      console.log("팀장2");
+      console.log("팀장3");
+      console.group("하위");
+      console.log("팀원1");
+      console.log("팀원2");
+      console.log("팀원3");
+      console.groupEnd();
+      console.groupEnd();
+
+      console.table(d);
+
+      console.error("error발생! 실행하지 않음");
+      console.warn("warn발생! 실행은 해줄게 경고문구는 읽어봐");
+
+      // console창 꾸미기 (꾸밀 문자(hello world) 앞에 %c)
+      console.log("%chello world", "color:tomato; font-size:32px");
+    </script>
+  </body>
+</html>
