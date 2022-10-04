@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document</title>
+  </head>
+  <body>
+    <script>
+      // 단락 평가
+      console.log(true || false); // 왼쪽 피연산자를 반환
+      // console.log("여기값을 출력" || false);
+      console.log(false || true); // 오른쪽 피연산자를 반환
+      // console.log(false || "여기값을 출력");
+      console.log(true && false); // 오른쪽 피연산자를 반환
+      // console.log(true && "여기값을 출력");
+      console.log(false && true); // 왼쪽 피연산자를 반환
+      // console.log("여기값을 출력" && true);
+
+      // 단락 평가를 통해 username도 입력하고 pw도 입력해야만 회원가입이 성공(true)
+      // 둘 중 하나라도 입력이 안되면 false
+      const signUp = !!(username && pw);
+
+      // !!을 사용하는 이유 => Boolean이 아닌 값을 Boolean값으로 표현하기 위해 사용
+      // Truthy값은 true, Falsy값을 false로 반환
+      console.log("-----------");
+      console.log(!false); // true
+      console.log(!!false); // false
+
+      console.log("-----------");
+      console.log("드모르간 법칙");
+      // or : ||
+      // and : &&
+      const x = 0;
+      const y = 1;
+      console.log(!(x || y) === (!x && !y));
+      console.log(!(x && y) === (!x || !y));
+
+      // 논리연산자를 활용한 간단한 알고리즘 문제 (1000미만의 3과 5의 배수를 모두 더하는 문제
+      let result = 0;
+      for (let i = 1; i < 1000; i++) {
+        if (i % 3 === 0 || i % 5 === 0) {
+          result += i;
+        }
+      }
+    </script>
+  </body>
+</html>

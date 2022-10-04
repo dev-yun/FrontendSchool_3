@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document</title>
+  </head>
+  <body>
+    <script>
+      // pop, shift같은 메소드를 사용할때 원본을 수정 없이 값을 수정하는 방법
+      let arr = [10, 20, 30, 40];
+      [...arr].pop();
+
+      // 원본을 얕은복사하여 복사본을 변경하는 방법
+      let tmpArr = [...arr];
+      tmpArr.pop();
+      console.log(tmpArr);
+
+      let a = [1, 2, 3];
+      let b = [6, 7, 8];
+      let c = [...a, 100, ...b];
+      console.log(c);
+    </script>
+  </body>
+</html>

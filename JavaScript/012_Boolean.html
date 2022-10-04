@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let one = true;
+      let two = false;
+
+      // Falsy 값
+      console.log(Boolean("")); // false
+      console.log(Boolean(0)); // false
+      console.log(Boolean(-0)); // false
+      console.log(Boolean(false)); // false
+      console.log(Boolean(undefined)); // false
+      console.log(Boolean(null)); // false
+      console.log(Boolean(NaN)); // false
+
+      // 헷갈리는 부분
+      console.log(Boolean([])); // true
+      console.log(Boolean({})); // true
+    </script>
+  </body>
+</html>
