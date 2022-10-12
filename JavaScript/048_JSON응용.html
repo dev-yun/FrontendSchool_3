@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        border: solid 1px black;
+        border-collapse: collapse;
+      }
+    </style>
+    <title>document</title>
+  </head>
+  <body>
+    <button onclick="renderTable(userData)">회원정보 로딩</button>
+    <table style="width: 100%">
+      <thead>
+        <th onclick="sort('_id')" style="width: 15%">id</th>
+        <th onclick="sort('index')" style="width: 15%">index</th>
+        <th onclick="sort('guid')" style="width: 15%">guid</th>
+        <th onclick="sort('age')" style="width: 15%">age</th>
+        <th onclick="sort('name')" style="width: 15%">name</th>
+        <th onclick="sort('gender')" style="width: 15%">gender</th>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+    <script>
+      let userData = [
+        {
+          _id: "63465558868ec18d1e514ff9",
+          index: 0,
+          guid: "b12283b1-0a3e-4653-9912-e908fe72818e",
+          age: 40,
+          name: "Pennington Bishop",
+          gender: "male",
+        },
+        {
+          _id: "634655589fe2ed3787da3ea3",
+          index: 1,
+          guid: "8bf95f79-9952-407a-beae-7aeb2465323a",
+          age: 29,
+          name: "Carey Beck",
+          gender: "female",
+        },
+        {
+          _id: "634655582d9b1848517f7856",
+          index: 2,
+          guid: "2caace1f-3372-475c-9fba-ca07b9f4a0c3",
+          age: 30,
+          name: "Socorro Curry",
+          gender: "female",
+        },
+        {
+          _id: "63465558e880b77552833e8f",
+          index: 3,
+          guid: "2c384a93-4a55-403f-9be3-07a37d458a89",
+          age: 34,
+          name: "Mullen Chaney",
+          gender: "male",
+        },
+        {
+          _id: "63465558470a1c7a38eac3aa",
+          index: 4,
+          guid: "ed3ec8f9-967e-43f0-a4bb-cf17b7a322a4",
+          age: 27,
+          name: "Carolyn Blackwell",
+          gender: "female",
+        },
+        {
+          _id: "63465558c321a21460e1b82b",
+          index: 5,
+          guid: "378ba486-df0a-43ff-8d11-211e35205f2e",
+          age: 21,
+          name: "Whitehead Baker",
+          gender: "male",
+        },
+      ];
+
+      var click = true;
+
+      function sort(key) {
+        if (click) {
+          click = false;
+          let sortedData = userData.sort((a, b) =>
+            a[key] < b[key] ? -1 : a[key] > b[key] ? 1 : 0
+          );
+          renderTable(sortedData);
+        } else {
+          click = true;
+          let sortedData = userData.sort((a, b) =>
+            a[key] > b[key] ? -1 : a[key] < b[key] ? 1 : 0
+          );
+          renderTable(sortedData);
+        }
+      }
+
+      const tbody = document.querySelector("tbody");
+      function renderTable(userData) {
+        const tableBodyData = [];
+        for (const user of userData) {
+          tableBodyData.push(`
+            <tr>
+              <td>${user._id}</td>
+              <td>${user.index}</td>
+              <td>${user.guid}</td>
+              <td>${user.age}</td>
+              <td>${user.name}</td>
+              <td>${user.gender}</td>
+            </tr>
+          `);
+        }
+        tbody.innerHTML = tableBodyData.join("");
+      }
+    </script>
+  </body>
+</html>
