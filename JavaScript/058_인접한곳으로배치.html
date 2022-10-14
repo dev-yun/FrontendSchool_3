@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document</title>
+  </head>
+  <body>
+    <strong class="sayHi"> 반갑습니다. </strong>
+    <!-- <h3>원본 요소:</h3>
+    <p id="source">
+      <style>
+        #source {
+          color: red;
+        }
+      </style>
+      아래에서<br />이 글을<br />어떻게 인식하는지 살펴보세요.
+      <span style="display: none">숨겨진 글</span>
+    </p>
+    <h3>textContent 결과:</h3>
+    <textarea id="textContentOutput" rows="6" cols="30" readonly>...</textarea>
+    <h3>innerText 결과:</h3>
+    <textarea id="innerTextOutput" rows="6" cols="30" readonly>...</textarea> -->
+
+    <script>
+      // const source = document.getElementById("source");
+      // const textContentOutput = document.getElementById("textContentOutput");
+
+      // const name = "<img src='x' onerror='alert(1)'>";
+      // source.innerHTML = name; // shows the alert
+
+      const sayHi = document.querySelector(".sayHi");
+      // 타겟 요소의 이전 형제 요소
+      sayHi.insertAdjacentHTML("beforebegin", "<span>안녕하세요 저는</span>");
+      // 타겟 요소의 첫번째 자식 요소
+      sayHi.insertAdjacentHTML("afterbegin", "<span>재현입니다</span>");
+      //
+      sayHi.insertAdjacentHTML("beforeend", "<span>면접오시면</span>");
+      sayHi.insertAdjacentHTML("afterend", "<span>치킨사드릴게요</span>");
+    </script>
+  </body>
+</html>

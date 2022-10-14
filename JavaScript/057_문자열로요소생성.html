@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document</title>
+  </head>
+  <body>
+    <p></p>
+    <input type="text" />
+    <button>Write Something!</button>
+    <script>
+      const myBtn = document.querySelector("button");
+      const myP = document.querySelector("p");
+      const myInput = document.querySelector("input");
+
+      // myBtn.addEventListener("click", function () {
+      //   myP.textContent = myInput.value;
+      // });
+
+      myInput.addEventListener("input", () => {
+        myP.textContent = myInput.value;
+      });
+      // myInput.addEventListener("input", () => {
+      //   myP.innerText = myInput.value;
+      // });
+      /* => 위 두 코드는 기능이 같음
+      그렇다면 textContent와 innerText의 차이는 무엇일까
+      textContent는 css문법, style적용이 되지 않은 상태 그대로 출력하고
+      innerText는 모두 렌더링이 끝난 상태의 텍스트를 출력한다.
+
+      innerText, innerHTML은 렌더링과정이 진행되기 때문에 성능적으로 textContent로 처리할 수 있다면 textContent를 사용해야한다.
+      */
+      // myP.outerHTML = "<div></div>";
+      myP.innerHTML = "<strong>I'm Strong!!</strong>";
+
+      // innerHTML 은 요소(element) 내에 포함된 HTML 마크업을 가져오거나 설정한다.
+      // innerText 속성은 요소의 렌더링된 텍스트 콘텐츠를 나타냅니다. (렌더링된에 주목하세요. innerText는 "사람이 읽을 수 있는" 요소만 처리합니다.)
+      // textContent 속성은 노드의 텍스트 콘텐츠를 표현합니다.
+    </script>
+  </body>
+</html>
