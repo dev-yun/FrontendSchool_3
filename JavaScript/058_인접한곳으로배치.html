@@ -30,14 +30,15 @@
       // const name = "<img src='x' onerror='alert(1)'>";
       // source.innerHTML = name; // shows the alert
 
-      const sayHi = document.querySelector(".sayHi");
+      const sayHi = document.querySelector('.sayHi');
       // 타겟 요소의 이전 형제 요소
-      sayHi.insertAdjacentHTML("beforebegin", "<span>안녕하세요 저는</span>");
+      sayHi.insertAdjacentHTML('beforebegin', '<span>안녕하세요 저는</span>');
       // 타겟 요소의 첫번째 자식 요소
-      sayHi.insertAdjacentHTML("afterbegin", "<span>재현입니다</span>");
-      //
-      sayHi.insertAdjacentHTML("beforeend", "<span>면접오시면</span>");
-      sayHi.insertAdjacentHTML("afterend", "<span>치킨사드릴게요</span>");
+      sayHi.insertAdjacentHTML('afterbegin', '<span>재현입니다</span>');
+      // 타겟 요소의 마지막 자식 요소
+      sayHi.insertAdjacentHTML('beforeend', '<span>면접오시면</span>');
+      // 타겟 요소의 다음 형제 요소
+      sayHi.insertAdjacentHTML('afterend', '<span>치킨사드릴게요</span>');
     </script>
   </body>
 </html>

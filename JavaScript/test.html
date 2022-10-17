@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document</title>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+      // // 1
+      // for (let i = 0; i < 10; i++) {
+      //   let divEl = document.createElement('div');
+      //   divEl.innerText = `body의 ${i}번째 자식노드`;
+      //   document.body.appendChild(divEl);
+      // }
+
+      // // 2
+      // const domFrag = new DocumentFragment();
+      // // const domFrag = document.createDocumentFragment();로도 선언할 수 있다.
+
+      // for (let i = 0; i < 10; i++) {
+      //   let divEl = document.createElement('div');
+      //   divEl.innerText = `body의 ${i}번째 자식노드`;
+      //   domFrag.appendChild(divEl);
+      // }
+
+      // document.body.appendChild(domFrag);
+
+      // // 3
+      // const test = document.createElement('div');
+      // for (let i = 0; i < 10; i++) {
+      //   let divEl = document.createElement('div');
+      //   divEl.innerText = `body의 ${i}번째 자식노드`;
+      //   test.appendChild(divEl);
+      // }
+      // console.dir(test);
+      // document.body.appendChild(test);
+      // console.dir(test);
+
+      // 4 : 여러 요소에 추가하는 방식
+      // const elements = [];
+
+      // for (let i = 0; i < 10; i++) {
+      //   const el = document.createElement('p');
+      //   el.innerText = 'hi';
+      //   elements.push(el);
+      // }
+
+      // const div = document.querySelectorAll('div');
+
+      // for (let i = 0; i < div.length; i++) {
+      //   for (let j = 0; j < elements.length; j++) {
+      //     // 참조타입을 추가할때에는 cloneNode를 통해 복사해야한다.
+      //     div[i].appendChild(elements[j].cloneNode(true));
+      //   }
+      // }
+
+      // 4.5 같은 코드
+      // const div = document.querySelectorAll('div');
+
+      // div.forEach((e) => {
+      //   for (let i = 0; i < 10; i++) {
+      //     const el = document.createElement('p');
+      //     el.innerText = 'hi';
+      //     e.appendChild(el);
+      //   }
+      // });
+
+      // 5 : domfragment 방식
+      // const domFrag = document.createDocumentFragment();
+
+      // for (let i = 0; i < 10; i++) {
+      //   const el = document.createElement('p');
+      //   el.innerText = 'hi';
+      //   domFrag.appendChild(el);
+      // }
+
+      // const div = document.querySelectorAll('div');
+
+      // for (let i = 0; i < div.length; i++) {
+      //   // Document Fragment는 한번 할당하면 사라지므로 cloneNode를 통해 복사해야한다.
+      //   div[i].appendChild(domFrag.cloneNode(true));
+      // }
+
+      // // 하지만 복사를 해서 추가했기 때문에 domFrag 객체에 자식 노드가 남아있게 된다.
+      // console.dir(domFrag);
+    </script>
+  </body>
+</html>
