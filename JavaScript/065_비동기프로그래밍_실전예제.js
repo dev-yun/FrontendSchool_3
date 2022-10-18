@@ -62,7 +62,7 @@ fetch('http://test.api.weniv.co.kr/mall')
       domFrag.appendChild(h2);
       domFrag.appendChild(p);
     });
-    document.body.appendChild(domFrag);
+    document.body.appendChild(domFrag); // 1번만 렌더링
   })
   .catch((error) => {
     console.error('에러발생 !!' + error);
