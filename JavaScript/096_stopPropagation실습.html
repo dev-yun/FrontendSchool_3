@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document</title>
+  </head>
+  <body>
+    <!-- text클릭 => p의 내부 내용을 alert창으로 띄우기 -->
+    <!-- 버튼 클릭 => 삭제하시겠습니까 alert창 띄우고 확인시 p삭제 -->
+    <h1>나의 todo list</h1>
+    <p>
+      1. 오늘 저녁에는 부대찌게를 끓여 먹겠다.<button type="button">
+        삭제
+      </button>
+    </p>
+    <p>2. 후식으로 슈팅스타를 먹겠다.<button type="button">삭제</button></p>
+    <p>
+      3. 자기 전에 반드시 내일 아침 메뉴를 생각해두겠다.<button type="button">
+        삭제
+      </button>
+    </p>
+
+    <script>
+      const p = document.querySelectorAll('p');
+      const submit = document.querySelectorAll('button');
+
+      // IE에서 forEach는 불가능
+      p.forEach((el) => {
+        el.addEventListener('click', (e) => {
+          // alert(el.childNodes[0].data);
+          alert(e.target.innerText.slice(0, -2));
+        });
+      });
+
+      // 기존 Array의 forEach를 nodeList에 this바인딩 함으로써 IE대응 리펙토링
+      // Array.prototype.forEach.call(p, (el) => {
+      //   el.addEventListener('click', (e) => {
+      //     // alert(el.childNodes[0].data);
+      //     alert(e.target.innerText.slice(0, -2));
+      //   });
+      // });
+
+      // submit.forEach((el) => {
+      //   el.addEventListener('click', (e) => {
+      //     const result = confirm('정말 삭제하시겠습니까?');
+      //     e.stopPropagation();
+      //     if (result) {
+      //       el.parentElement.remove();
+      //     }
+      //   });
+      // });
+
+      for (const item of submit) {
+        item.addEventListener('click', (event) => {
+          const result = confirm('삭제 하시겠습니까?');
+
+          // 버블링 차단.
+          event.stopPropagation();
+          if (result) {
+            item.parentElement.remove();
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

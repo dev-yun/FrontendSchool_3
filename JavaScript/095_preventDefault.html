@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document</title>
+  </head>
+  <body>
+    <!-- 브라우저의 기본 동작이 방해가 될때가 있는데 이럴때 사용 -->
+    <!-- 기본 이벤트 동작을 취소함 -->
+
+    <!-- 앵커의 기본 동작을 중지 => link로 이동하는 기능을 막음-->
+    <!-- <a href="https://www.naver.com" class="link">네이버 링크입니다만..</a>
+    <script>
+      const link = document.querySelector('.link');
+      link.addEventListener('click', (event) => {
+        console.log('clicked');
+        event.preventDefault();
+      });
+    </script> -->
+
+    <!-- submit 의 기본 동작을 중지 => form이 제공하는 submit시 새로고침되는 현상을 막음 -->
+    <!-- <form action="">
+      <button type="submit" class="submit">제출</button>
+    </form>
+    <script>
+      const submit = document.querySelector('.submit');
+      submit.addEventListener('click', (event) => {
+        console.log('clicked');
+        event.preventDefault();
+      });
+    </script> -->
+
+    <!-- 우클릭 막기 -->
+    <!-- <script>
+      document.addEventListener('contextmenu', () => {
+        event.preventDefault();
+        alert('해당 페이지에서는 오른쪽 클릭을 제한합니다!');
+      });
+    </script> -->
+
+    <!-- preventDefault는 기본동작을 막지만 이벤트 흐름(이벤트 전파)는 막지 못한다. -->
+    <!-- stopPropagation을 통해 이벤트 버블링을 막아야한다.  -->
+    <!-- 즉, 이벤트에 stopPropagation을 적용하면 이벤트가 타겟 이상으로 올라가지 않음 -->
+    <!-- 이벤트 캡처링은 막지 못한다. -->
+    <form action="">
+      <button type="submit" class="submit">제출</button>
+    </form>
+
+    <script>
+      const submit = document.querySelector('.submit');
+      submit.addEventListener('click', (event) => {
+        console.log('clicked');
+        event.preventDefault();
+        event.stopPropagation();
+      });
+
+      document.body.addEventListener(
+        'click',
+        () => {
+          console.log('event still alive!');
+        },
+        true
+      );
+      document.body.addEventListener('click', () => {
+        console.log('event still alive!');
+      });
+    </script>
+  </body>
+</html>
