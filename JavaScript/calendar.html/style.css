@@ -1,0 +1,43 @@
+#calendar {
+  padding: 20px;
+  background-color: #333;
+  text-align: center;
+  color: #fff;
+}
+
+#calendar table {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+caption {
+  font-size: 25px;
+  color: orange;
+  margin: 10px;
+}
+
+th,
+td {
+  width: 30px;
+  padding: 10px;
+  border: 1px solid #666;
+}
+
+th:first-child,
+td:first-child {
+  color: tomato;
+}
+
+th:last-child,
+td:last-child {
+  color: dodgerblue;
+}
+
+.prev-month,
+.next-month {
+  color: inherit;
+  padding: 5px;
+  margin: 10px;
+  background-color: #333;
+  border-radius: 5px;
+}
