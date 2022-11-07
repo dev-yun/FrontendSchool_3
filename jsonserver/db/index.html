@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>제코베 스토어 관리자 페이지</title>
+  </head>
+  <body>
+    <button type="button" id="get-item">상품 불러오기</button>
+    <br />
+    <br />
+    <label for="productName">상품이름</label>
+    <input id="productName" type="text" />
+    <br />
+    <br />
+    <label for="productPrice">상품가격</label>
+    <input id="productPrice" type="number" />
+    <br />
+    <br />
+    <label for="productDate">출시날짜</label>
+    <input id="productDate" type="date" />
+    <br />
+    <br />
+    <label for="productCount">재고</label>
+    <input id="productCount" type="number" />
+    <br />
+    <br />
+    <button id="post-item" type="button">상품 등록하기</button>
+
+    <script>
+      //GET
+      const getButton = document.querySelector('#get-item');
+      getButton.addEventListener('click', () => {
+        fetch('http://localhost:3001/product', {
+          method: 'GET',
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            const domFrag = new DocumentFragment();
+            data.forEach((e) => {
+              const container = document.createElement('article');
+              const productName = document.createElement('h2');
+              const productPrice = document.createElement('p');
+
+              productName.textContent = e.productName;
+              productPrice.textContent = e.price;
+
+              container.appendChild(productName);
+              container.appendChild(productPrice);
+
+              domFrag.appendChild(container);
+            });
+
+            document.body.appendChild(domFrag);
+          })
+          .catch((error) => {
+            console.error('실패:', error);
+          });
+      });
+
+      //POST
+      const postButton = document.querySelector('#post-item');
+      postButton.addEventListener('click', (e) => {
+        const productInfo = {
+          productName: document.querySelector('#productName').value,
+          price: document.querySelector('#productPrice').value,
+          stockCount: document.querySelector('#productCount').value,
+          viewCount: 0,
+          pubDate: document.querySelector('#productDate').value,
+          modDate: document.querySelector('#productDate').value,
+        };
+
+        fetch('http://localhost:3001/product', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(productInfo),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            const container = document.createElement('article');
+            const productName = document.createElement('h2');
+            const productPrice = document.createElement('p');
+
+            productName.innerText = data.productName;
+            productPrice.innerText = data.price;
+
+            container.appendChild(productName);
+            container.appendChild(productPrice);
+
+            document.body.appendChild(container);
+          })
+          .catch((error) => {
+            console.error('실패:', error);
+          });
+      });
+    </script>
+  </body>
+</html>
