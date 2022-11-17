@@ -1,13 +1,13 @@
-import React from 'react'
-// import './two.css'
-// import './two.module.css'
-import styles from './two.module.css'
+import React from 'react';
+// import './Two.css'
+// import './Two.module.css'
+import styles from './Two.module.css';
 
-export default function Two () {
+export default function Two() {
   return (
     <section>
-        <h2>hello world</h2>
-        <p className={styles.contents}>hello world</p>
+      <h2>hello world</h2>
+      <p className={styles.contents}>hello world</p>
     </section>
-  )
+  );
 }
