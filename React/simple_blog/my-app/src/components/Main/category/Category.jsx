@@ -1,6 +1,6 @@
-import "./category.css"
+import './category.css';
 
-export default function Category({category}) {
+export default function Category({ category }) {
   // console.log(category)
   // const rederingContents = []
   // for (const item of category) {
@@ -10,8 +10,10 @@ export default function Category({category}) {
   return (
     <dl class="category">
       <dt class="a11y-hidden">Category</dt>
-      {category.map((item, index) => <dd key={index}>{item}</dd>)}
+      {category.map((item, index) => (
+        <dd key={index}>{item}</dd>
+      ))}
       {/* {rederingContents} */}
     </dl>
-  )
+  );
 }
