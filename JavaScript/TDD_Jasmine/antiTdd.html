@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      article {
+        display: inline-block;
+        border: 3px solid black;
+        border-radius: 10px;
+        padding: 10px;
+      }
+
+      .viewer {
+        font-size: 24px;
+        color: green;
+        margin: 50px 0px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <h2 class="viewer">제목</h2>
+      <input type="text" class="inp-txt" />
+      <button class="btn-push" onclick="push()">적용</button>
+    </article>
+  </body>
+  <script>
+    // 전역 변수는 테스트에서 안티패턴. (함수가지고 테스트할때 전역변수는 배제되기 때문에 )
+    let txt = 'Hello Lions!';
+    const viewer = document.querySelector('.viewer');
+    viewer.textContent = txt;
+
+    // 테스트를 위해서는 dom요소가 필요함(.inp-txt) 즉, 테스트가 불가능
+    const push = () => {
+      const inpTxt = document.querySelector('.inp-txt');
+      viewer.textContent = inpTxt.value;
+    };
+
+    /** 테스트가 가능하려면
+     * 1. JS코드가 UI로부터 분리되어야함.
+     * 2. 자바스크립트를 따로 js파일로 분리해야함.
+     * 3. 모든 기능은 함수로 구현해야함.
+     */
+  </script>
+</html>
